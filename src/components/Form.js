@@ -5,8 +5,6 @@ const Form = ({ calculateIncome }) => {
   const [totalExpenses, setTotalExpenses] = useState("");
   const [driverPercentage, setDriverPercentage] = useState(40);
   const [ownerPercentage, setOwnerPercentage] = useState(60);
-  const [driverExpensePercentage, setDriverExpensePercentage] = useState(40);
-  const [ownerExpensePercentage, setOwnerExpensePercentage] = useState(60);
   const [scenario, setScenario] = useState("shared-expenses");
 
   const handleSubmit = (e) => {
@@ -16,9 +14,7 @@ const Form = ({ calculateIncome }) => {
       totalExpenses,
       driverPercentage,
       ownerPercentage,
-      scenario,
-      driverExpensePercentage,
-      ownerExpensePercentage
+      scenario
     );
   };
 
@@ -53,22 +49,6 @@ const Form = ({ calculateIncome }) => {
         type="number"
         value={ownerPercentage}
         onChange={(e) => setOwnerPercentage(e.target.value)}
-        required
-      />
-
-      <label>Porcentaje de Gastos del Chofer (%):</label>
-      <input
-        type="number"
-        value={driverExpensePercentage}
-        onChange={(e) => setDriverExpensePercentage(e.target.value)}
-        required
-      />
-
-      <label>Porcentaje de Gastos del Dueño (%):</label>
-      <input
-        type="number"
-        value={ownerExpensePercentage}
-        onChange={(e) => setOwnerExpensePercentage(e.target.value)}
         required
       />
 
