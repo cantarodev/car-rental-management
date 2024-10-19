@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/car-rental-management/static/css/main.3816769a.css",
+    "main.js": "/car-rental-management/static/js/main.26b509da.js",
+    "static/js/453.4b1257e4.chunk.js": "/car-rental-management/static/js/453.4b1257e4.chunk.js",
+    "index.html": "/car-rental-management/index.html",
+    "main.3816769a.css.map": "/car-rental-management/static/css/main.3816769a.css.map",
+    "main.26b509da.js.map": "/car-rental-management/static/js/main.26b509da.js.map",
+    "453.4b1257e4.chunk.js.map": "/car-rental-management/static/js/453.4b1257e4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3816769a.css",
+    "static/js/main.26b509da.js"
+  ]
+}
