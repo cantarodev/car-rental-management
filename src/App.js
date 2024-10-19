@@ -12,18 +12,24 @@ const App = () => {
     totalExpenses,
     driverPercentage,
     ownerPercentage,
-    scenario
+    scenario,
+    driverExpensePercentage,
+    ownerExpensePercentage
   ) => {
     totalIncome = parseFloat(totalIncome);
     totalExpenses = parseFloat(totalExpenses);
     driverPercentage = parseFloat(driverPercentage) / 100;
     ownerPercentage = parseFloat(ownerPercentage) / 100;
+    driverExpensePercentage = parseFloat(driverExpensePercentage) / 100;
+    ownerExpensePercentage = parseFloat(ownerExpensePercentage) / 100;
 
     let driverIncome, ownerIncome;
 
     switch (scenario) {
       case "shared-expenses":
-        const netIncomeShared = totalIncome - totalExpenses;
+        const driverExpenses = totalExpenses * driverExpensePercentage;
+        const ownerExpenses = totalExpenses * ownerExpensePercentage;
+        const netIncomeShared = totalIncome - driverExpenses - ownerExpenses;
         driverIncome = netIncomeShared * driverPercentage;
         ownerIncome = netIncomeShared * ownerPercentage;
         break;
@@ -32,10 +38,8 @@ const App = () => {
         ownerIncome = totalIncome * ownerPercentage - totalExpenses;
         break;
       case "driver-expenses":
-        console.log("aqui");
-
-        driverIncome = totalIncome * driverPercentage - totalExpenses;
-        ownerIncome = totalIncome * ownerPercentage;
+        driverIncome = (totalIncome - totalExpenses) * driverPercentage;
+        ownerIncome = (totalIncome - totalExpenses) * ownerPercentage;
         break;
       default:
         driverIncome = totalIncome * 0.4;
